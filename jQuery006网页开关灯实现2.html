@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //DOM的方式来操作
+        /*
+         *需求：点击按钮设置body的背景颜色,实现网页开关灯的效果
+         * 思路： 事件 onclick  对象btn  结果 body的背景颜色改变
+         * 获取对象 btn  在window.onload里面写
+         * 判断现在this.value的值
+         */
+        /* window.onload = function () {
+         document.getElementById("btn").onclick = function () {
+         if (this.value == "关灯") {
+         document.body.style.backgroundColor = "black";
+         this.value == "开灯"
+         } else {
+         document.body.style.backgroundColor = "white";
+         this.value == "关灯"
+         }
+         };
+         };*/
+        /**
+         * 点击按钮设置body背景的颜色，实现网页开关灯的效果
+         * */
+        window.onload = function () {
+            document.getElementById("btn").onclick = function () {
+                if (this.value == "关灯") {
+                    document.body.style.backgroundColor = "black";
+                    this.value == "开灯"
+                } else {
+                    document.body.style.backgroundColor = "white";
+                    this.value == "关灯"
+                }
+            };
+        };
+    </script>
+    <!--<script src="jquery-1.12.2.js"></script>-->
+    <!-- <script>
+       $(function(){
+         $("#btn").click(function () {
+         if($(this).val()=="关灯"){
+         $("body").css("backgroundColor","black");
+         $(this).val("开灯");
+         }else{
+         $("body").css("backgroundColor","white");
+         $(this).value("关灯");
+         }
+         });
+         });
+        //页面的加载事件
+        /*
+         $(function () {
+         //获取按钮,注册点击事件
+         $("#btn").click(function () {
+         //.val()方法-&ndash;&gt;获取按钮的value属性的值
+         //.val("内容");是设置按钮的value属性的值
+         if ($(this).val() == "关灯") {
+         $("body").css("backgroundColor", "black");
+         $(this).val("开灯");
+         } else {
+         $("body").css("backgroundColor", "white");
+         $(this).val("关灯");
+         }
+         });
+         });*/
+    </script>-->
+</head>
+<body>
+<input type="button" value="关灯" id="btn"/>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        /*为什么要dom对象和jquery对象互转：dom对象转为jquery对象能使用jquery里面的封装的函数，操作简便
+         jquery对象转dom对象，因为jquery只是一个javascript的代码库，不能涵盖所有的DOM操作，有的需要原生的js代码书写
+         * dom操作按钮,修改背景颜色
+         *
+         * */
+
+        // window.onload=function () {
+        //btnObj就是DOM对象
+        //var btnObj= document.getElementById("btn");
+        //            btnObj.onclick=function () {
+        //                this.style.backgroundColor="red";
+        //            };
+        //DOM对象转jQuery对象,只需要把DOM对象放在$(dom对象)--->jQuery对象
+        //            $(btnObj).click(function () {
+        //                $(this).css("backgroundColor","red");
+        //            });
+        window.onload = function () {
+            /*dom对象*/
+           var btnObj=  document.getElementById('btn')
+            /*  btnObj.onclick = function(){
+                this.style.backgroundColor ="red";
+
+            }*/
+            /*dom对象转jquery对象,*/
+
+        /*    $(btnObj).click(function(){
+                $(this).css({'backgroundColor':'red'});
+            });*/
+            /*jquery对象转为dom对象,dom对象不能使用jquery的方法*/
+           /* $(btnObj).get(0).onclick(function(){
+                $(this).css({'backgroundColor':'red'});
+
+            });*/
+           /* $(btnObj).get(0).onclick = function(){
+                this.style.backgroundColor="red";
+            }*/
+             $(btnObj)[0].onclick = function(){
+                 this.style.backgroundColor='red';
+             };
+
+
+        };
+
+        //把jQuery对象转DOM对象两种方式:
+        /*
+         * 1.$(btnObj).get(0);---->DOM对象
+         * 2.$(btnObj)[0];----->DOM对象
+         *
+         * */
+        //            var btnObj=document.getElementById("btn");//DOM对象
+        //           var obj= $(btnObj).get(0);//DOM对象
+        //            obj.onclick=function () {
+        //              this.style.backgroundColor="green";
+        //            };
+        //            var btnObj=document.getElementById("btn");//DOM对象
+        //            var obj= $(btnObj)[0];//DOM对象
+        //            obj.onclick=function () {
+        //                this.style.backgroundColor="green";
+        //            };
+        //  };
+
+      //  $(function () {
+            //$("#btn");---->jQuery对象
+//            $("#btn").click(function () {
+//                $(this).css("backgroundColor","yellow");
+//            });
+//            $("#btn").onclick=function () {
+//                this.style.backgroundColor="red";
+//            };
+           /* $("#btn").get(0).onclick = function () {
+                this.style.backgroundColor = "red";
+            };
+        });*/
+        /*
+         * DOM对象和jQuery对象可以互转
+         * DOM对象转---->jQuery对象:
+         * $(DOM的对象)----->jQuery对象
+         * jQuery对象---->DOM对象:
+         * 1.
+         * $("#btn")[0]---->DOM对象
+         * 2.
+         * $("#btn").get(0)---DOM对象
+         *
+         *
+         *
+         * */
+    </script>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn"/>
+</body>
+</html>

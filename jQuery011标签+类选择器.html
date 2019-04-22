@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cls {
+            background-color: red;
+        }
+
+        a {
+            text-decoration: none;
+            ;
+        }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        //点击按钮设置页面上应用cls类样式li标签的背景颜色
+        //页面加载的事件
+        /*   $(function () {
+          //获取按钮,注册点击事件
+          $("#btn").click(function () {
+          //获取应用cls类样式的li标签
+          //标签+类样式的选择器
+          /*也可以写成 ul 空格 .cls  表示的是后代选择
+                      ul>.cls 子代选择器
+          */
+        // $("li.cls").css("backgroundColor","yellow");
+        // });
+        //});*/
+
+
+        // $(function () {
+        //     $('#btn').click(function(){
+        //         $('ul>.cls').css({'backgroundColor':'green'});
+        //     });
+        // });
+
+
+        window.onload = function () {
+            var btn = document.getElementById("btn")
+            btn.onclick = function () {
+                document.getElementsByClassName('cls')[0].innerText = "heheh"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="设置样式" id="btn" />
+    <ul>
+        <li class="cls">乔峰</li>
+        <li>慕容复</li>
+        <li>虚竹</li>
+        <li>
+            <a href="javasvript:;" class="cls">卡卡西</a>
+        </li>
+        <li>大蛇丸</li>
+    </ul>
+</body>
+
+</html>
